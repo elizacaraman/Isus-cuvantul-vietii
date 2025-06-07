@@ -10,24 +10,27 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <style>
     body { font-family: 'Nunito', sans-serif; }
+    html { scroll-behavior: smooth; }
   </style>
 </head>
 <body class="bg-white text-[#1f2937]">
 
-<header class="fixed w-full bg-white/60 backdrop-blur-md shadow z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
-<div class="flex items-center ml-[-100px]">
-  <img src="images/logo.png" alt="Logo Biserica" class="h-20 w-auto" />
-  <div class="flex flex-col leading-tight">
-<h1 class="text-[#41678f] text-2xl font-[Cinzel] uppercase tracking-wider drop-shadow-sm" data-i18n-html="site_name">
-  Isus <span class="text-[#1f2937] font-light"> - Cuvântul Vieții</span>
-</h1>
-    </h1>
-    <p class="italic text-sm text-[#3d5e78]" data-i18n="verse">„Cuvântul Tău este o candelă pentru picioarele mele.”</p>
-  </div>
-</div>
-    <nav>
-      <ul class="flex gap-6 text-lg font-semibold text-gray-800">
+<header class="fixed w-full bg-white/90 backdrop-blur-md shadow z-50">
+  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-4 py-2">
+    <!-- Logo + Titlu -->
+    <div class="flex items-center space-x-2">
+      <img src="images/logo.png" alt="Logo Biserica" class="h-14 w-auto" />
+      <div class="leading-tight">
+        <h1 class="text-[#41678f] text-xl md:text-2xl font-[Cinzel] uppercase tracking-wider drop-shadow-sm" data-i18n-html="site_name">
+          Isus <span class="text-[#1f2937] font-light"> - Cuvântul Vieții</span>
+        </h1>
+        <p class="italic text-xs text-[#3d5e78] hidden sm:block" data-i18n="verse">„Cuvântul Tău este o candelă pentru picioarele mele.”</p>
+      </div>
+    </div>
+
+    <!-- Meniu Navigatie -->
+    <nav class="w-full md:w-auto mt-3 md:mt-0">
+      <ul class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base font-semibold text-gray-800">
         <li><a href="#acasa" class="hover:text-[#41678f]" data-i18n="home">Acasă</a></li>
         <li><a href="#despre" class="hover:text-[#41678f]" data-i18n="about">Despre</a></li>
         <li><a href="#program" class="hover:text-[#41678f]" data-i18n="program">Program</a></li>
@@ -36,7 +39,9 @@
         <li><a href="#contact" class="hover:text-[#41678f]" data-i18n="contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="ml-4 to flex gap-2 text-[#1f2937] font-semibold">
+
+    <!-- Limbi -->
+    <div class="flex gap-2 text-sm font-semibold text-[#1f2937] mt-2 md:mt-0">
       <button onclick="setLang('ro')">RO</button>
       <button onclick="setLang('ru')">RU</button>
       <button onclick="setLang('en')">EN</button>
@@ -44,16 +49,15 @@
   </div>
 </header>
 
-<section id="acasa" class="relative w-full h-[80vh] overflow-hidden">
+<!-- Verset -->
+<section id="acasa" class="relative w-full h-[80vh] overflow-hidden flex items-center justify-center">
   <img src="images/img1.jpg" alt="Imagine verset" class="absolute inset-0 w-full h-full object-cover" />
   <div class="absolute inset-0 bg-black/40"></div>
-  <div class="relative z-10 flex items-center justify-center h-full px-4 text-center" data-aos="fade-up" data-aos-duration="2000">
-    <div class="text-white max-w-4xl">
-      <p class="text-2xl md:text-4xl font-bold leading-snug" data-i18n="welcome_verse">
-        „Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viață veșnică.”
-      </p>
-      <p class="mt-4 text-lg md:text-xl font-light" data-i18n="verse_ref">Ioan 3:16</p>
-    </div>
+  <div class="relative z-10 px-4 text-center animate-pulse">
+    <p class="text-white text-2xl md:text-4xl font-bold leading-snug" data-i18n="welcome_verse">
+      „Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viață veșnică.”
+    </p>
+    <p class="mt-4 text-lg md:text-xl text-white font-light" data-i18n="verse_ref">Ioan 3:16</p>
   </div>
 </section>
 
