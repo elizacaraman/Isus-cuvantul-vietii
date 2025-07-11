@@ -148,7 +148,15 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+@media (max-width: 768px) {
+  .site-title {
+    font-size: 1.1rem; /* sau cât vrei tu */
+  }
+
+  .site-subtitle {
+    font-size: 0.75rem;
+  }
+}
 :root {
   scroll-padding-top: 100px; /* Ajustează dacă headerul e mai mic/mare */
 }
-
