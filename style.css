@@ -148,3 +148,17 @@ footer {
 html {
   scroll-behavior: smooth;
 }
+/* Asigură că titlul din antet nu se rupe pe mobil */
+.header-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 1.5rem;
+  }
+}
