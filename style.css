@@ -148,19 +148,6 @@ footer {
 html {
   scroll-behavior: smooth;
 }
-.site-title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-family: 'Cinzel', serif;
-  font-size: 1.2rem;
-}
-
-@media (min-width: 768px) {
-  .site-title {
-    font-size: 1.5rem;
-  }
-}
 :root {
   scroll-padding-top: 100px; /* Ajustează dacă headerul e mai mic/mare */
 }
