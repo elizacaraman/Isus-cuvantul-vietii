@@ -150,13 +150,14 @@ html {
 }
 @media (max-width: 768px) {
   .site-title {
-    font-size: 1.1rem; /* sau cât vrei tu */
+    font-size: 0.9rem; /* echivalent cu ~14px */
   }
 
   .site-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.7rem; /* și subtitlul mai mic */
   }
 }
+
 :root {
   scroll-padding-top: 100px; /* Ajustează dacă headerul e mai mic/mare */
 }
