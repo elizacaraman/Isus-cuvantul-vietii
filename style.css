@@ -161,4 +161,7 @@ html {
     font-size: 1.5rem;
   }
 }
+:root {
+  scroll-padding-top: 100px; /* Ajustează dacă headerul e mai mic/mare */
+}
 
