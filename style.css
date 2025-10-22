@@ -145,21 +145,3 @@ footer {
   margin-top: 40px;
   font-size: 0.9rem;
 }
-html {
-  scroll-behavior: smooth;
-}
-@media (max-width: 768px) {
-  .site-title {
-    font-size: 0.75rem; /* ~12px */
-    line-height: 1.1rem;
-  }
-
-  .site-subtitle {
-    font-size: 0.6rem; /* ~10px */
-    line-height: 1rem;
-  }
-}
-
-:root {
-  scroll-padding-top: 100px; /* Ajustează dacă headerul e mai mic/mare */
-}
