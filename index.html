@@ -16,7 +16,8 @@
 <body class="bg-white text-[#1f2937]">
 
 <header class="fixed w-full bg-white/90 backdrop-blur-md shadow z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+    
     <!-- Logo + Titlu -->
     <div class="flex items-center space-x-2">
       <img src="images/logo.png" alt="Logo Biserica" class="h-14 w-auto" />
@@ -28,7 +29,7 @@
       </div>
     </div>
 
-    <!-- Meniu Desktop -->
+    <!-- Meniu desktop -->
     <nav class="hidden md:flex gap-6 text-sm md:text-base font-semibold text-gray-800">
       <a href="#acasa" class="hover:text-[#41678f]" data-i18n="home">Acasă</a>
       <a href="#despre" class="hover:text-[#41678f]" data-i18n="about">Despre</a>
@@ -38,33 +39,24 @@
       <a href="#contact" class="hover:text-[#41678f]" data-i18n="contact">Contact</a>
     </nav>
 
-    <!-- Limbi Desktop -->
-    <div class="hidden md:flex gap-2 text-sm font-semibold text-[#1f2937]">
-      <button onclick="setLang('ro')">RO</button>
-      <button onclick="setLang('ru')">RU</button>
-      <button onclick="setLang('en')">EN</button>
-    </div>
+    <!-- Buton hamburger mobil -->
+    <button id="menu-btn" class="md:hidden text-3xl text-[#41678f] font-bold">&#9776;</button>
 
-    <!-- Hamburger mobil -->
-    <button id="menu-btn" class="md:hidden flex flex-col justify-between w-6 h-6 focus:outline-none">
-      <span class="block h-0.5 w-full bg-[#41678f]"></span>
-      <span class="block h-0.5 w-full bg-[#41678f]"></span>
-      <span class="block h-0.5 w-full bg-[#41678f]"></span>
-    </button>
   </div>
+</header>
 
-  <!-- Meniu mobil -->
-<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white/95 backdrop-blur-md z-40 transform -translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center gap-8 text-2xl font-semibold">
+<!-- Meniu mobil overlay -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full z-40 transform -translate-x-full flex flex-col justify-center items-center gap-8 text-2xl font-semibold transition-transform duration-300 md:hidden bg-white/90 backdrop-blur-md">
   
   <!-- Buton inchidere -->
   <button id="close-btn" class="absolute top-6 right-6 text-[#41678f] text-3xl font-bold">&times;</button>
   
-  <a href="#acasa" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Acasă</a>
-  <a href="#despre" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Despre</a>
-  <a href="#program" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Program</a>
-  <a href="#predici" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Predici</a>
-  <a href="#noutati" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Noutăți</a>
-  <a href="#contact" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Contact</a>
+  <a href="#acasa" onclick="toggleMenu()">Acasă</a>
+  <a href="#despre" onclick="toggleMenu()">Despre</a>
+  <a href="#program" onclick="toggleMenu()">Program</a>
+  <a href="#predici" onclick="toggleMenu()">Predici</a>
+  <a href="#noutati" onclick="toggleMenu()">Noutăți</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
 
   <div class="flex gap-4 mt-6">
     <button onclick="setLang('ro'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">RO</button>
@@ -73,7 +65,6 @@
   </div>
 </div>
 
-</header>
 
 
 <!-- Verset -->
