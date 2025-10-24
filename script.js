@@ -8,3 +8,12 @@ function toggleMenu() {
 
 menuBtn.addEventListener('click', toggleMenu);
 closeBtn.addEventListener('click', toggleMenu);
+
+// Forțează viewport-ul să fie full height pe mobil la load
+window.addEventListener('load', () => {
+  document.body.style.height = window.innerHeight + 'px';
+});
+
+window.addEventListener('resize', () => {
+  document.body.style.height = window.innerHeight + 'px';
+});
