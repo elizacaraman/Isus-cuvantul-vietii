@@ -16,7 +16,7 @@
 <body class="bg-white text-[#1f2937]">
 
 <header class="fixed w-full bg-white/90 backdrop-blur-md shadow z-50">
-  <div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center px-1 py-1">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-2">
     <!-- Logo + Titlu -->
     <div class="flex items-center space-x-2">
       <img src="images/logo.png" alt="Logo Biserica" class="h-14 w-auto" />
@@ -28,26 +28,53 @@
       </div>
     </div>
 
-    <!-- Meniu Navigatie -->
-    <nav class="w-full md:w-auto mt-3 md:mt-0">
-      <ul class="flex flex-wrap justify-center gap-4 md:gap-6 text-sm md:text-base font-semibold text-gray-800">
-        <li><a href="#acasa" class="hover:text-[#41678f]" data-i18n="home">Acasă</a></li>
-        <li><a href="#despre" class="hover:text-[#41678f]" data-i18n="about">Despre</a></li>
-        <li><a href="#program" class="hover:text-[#41678f]" data-i18n="program">Program</a></li>
-        <li><a href="#predici" class="hover:text-[#41678f]" data-i18n="sermons">Predici</a></li>
-        <li><a href="#noutati" class="hover:text-[#41678f]" data-i18n="news">Noutăți</a></li>
-        <li><a href="#contact" class="hover:text-[#41678f]" data-i18n="contact">Contact</a></li>
-      </ul>
+    <!-- Meniu Desktop -->
+    <nav class="hidden md:flex gap-6 text-sm md:text-base font-semibold text-gray-800">
+      <a href="#acasa" class="hover:text-[#41678f]" data-i18n="home">Acasă</a>
+      <a href="#despre" class="hover:text-[#41678f]" data-i18n="about">Despre</a>
+      <a href="#program" class="hover:text-[#41678f]" data-i18n="program">Program</a>
+      <a href="#predici" class="hover:text-[#41678f]" data-i18n="sermons">Predici</a>
+      <a href="#noutati" class="hover:text-[#41678f]" data-i18n="news">Noutăți</a>
+      <a href="#contact" class="hover:text-[#41678f]" data-i18n="contact">Contact</a>
     </nav>
 
-    <!-- Limbi -->
-    <div class="flex gap-2 text-sm font-semibold text-[#1f2937] mt-2 md:mt-0">
+    <!-- Limbi Desktop -->
+    <div class="hidden md:flex gap-2 text-sm font-semibold text-[#1f2937]">
       <button onclick="setLang('ro')">RO</button>
       <button onclick="setLang('ru')">RU</button>
       <button onclick="setLang('en')">EN</button>
     </div>
+
+    <!-- Hamburger mobil -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-between w-6 h-6 focus:outline-none">
+      <span class="block h-0.5 w-full bg-[#41678f]"></span>
+      <span class="block h-0.5 w-full bg-[#41678f]"></span>
+      <span class="block h-0.5 w-full bg-[#41678f]"></span>
+    </button>
   </div>
+
+  <!-- Meniu mobil -->
+<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full bg-white/95 backdrop-blur-md z-40 transform -translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center gap-8 text-2xl font-semibold">
+  
+  <!-- Buton inchidere -->
+  <button id="close-btn" class="absolute top-6 right-6 text-[#41678f] text-3xl font-bold">&times;</button>
+  
+  <a href="#acasa" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Acasă</a>
+  <a href="#despre" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Despre</a>
+  <a href="#program" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Program</a>
+  <a href="#predici" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Predici</a>
+  <a href="#noutati" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Noutăți</a>
+  <a href="#contact" class="hover:text-[#41678f] hover:scale-105 transition transform shadow-sm px-4 py-2 rounded" onclick="toggleMenu()">Contact</a>
+
+  <div class="flex gap-4 mt-6">
+    <button onclick="setLang('ro'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">RO</button>
+    <button onclick="setLang('ru'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">RU</button>
+    <button onclick="setLang('en'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">EN</button>
+  </div>
+</div>
+
 </header>
+
 
 <!-- Verset -->
 <section id="acasa" class="relative w-full h-[80vh] overflow-hidden flex items-center justify-center">
