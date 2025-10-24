@@ -175,10 +175,19 @@ footer {
   transform: rotate(90deg);
   color: #003f8a;
 }
+:root {
+  --vh: 100%;
+}
+
 html, body {
-  height: 100%;
-  width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* previne scroll orizontal */
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
+
+.fullscreen {
+  height: calc(var(--vh, 1vh) * 100);
+}
+
