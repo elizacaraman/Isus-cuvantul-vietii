@@ -1,80 +1,90 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="title">Isus Cuvântul Vieții</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title data-i18n="title">Isus Cuvântul Vieții - Biserica din Lozova</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <style>
     body { font-family: 'Nunito', sans-serif; }
-    html { scroll-behavior: smooth; }
+    .mobile-menu { display: none; }
+    @media (max-width: 768px) {
+      .desktop-menu { display: none; }
+      .mobile-menu { display: block; }
+    }
   </style>
 </head>
 <body class="bg-white text-[#1f2937]">
 
-<header class="fixed w-full bg-white/90 backdrop-blur-md shadow z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
-    
-    <!-- Logo + Titlu -->
-    <div class="flex items-center space-x-2">
-      <img src="images/logo.png" alt="Logo Biserica" class="h-14 w-auto" />
+<!-- HEADER -->
+<header class="fixed w-full bg-white/80 backdrop-blur-md shadow z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="flex items-center space-x-3">
+      <img src="images/logo.png" alt="Logo Biserica" class="h-12 w-auto" />
       <div class="leading-tight">
-        <h1 class="text-[#41678f] text-xl md:text-2xl font-[Cinzel] uppercase tracking-wider drop-shadow-sm" data-i18n-html="site_name">
-          Isus <span class="text-[#1f2937] font-light"> - Cuvântul Vieții</span>
-        </h1>
-        <p class="italic text-xs text-[#3d5e78] hidden sm:block" data-i18n="verse">„Cuvântul Tău este o candelă pentru picioarele mele.”</p>
+<h1 class="site-title text-[#41678f] text-2xl sm:text-2xl font-[Cinzel] uppercase tracking-wider drop-shadow-sm">
+  ISUS <span class="text-[#1f2937] font-light"> - CUVÂNTUL VIEȚII</span>
+</h1>
+<p class="site-subtitle italic text-sm text-[#3d5e78]">
+  „Cuvântul Tău este o candelă pentru picioarele mele.”
+</p>
       </div>
     </div>
 
-    <!-- Meniu desktop -->
-    <nav class="hidden md:flex gap-6 text-sm md:text-base font-semibold text-gray-800">
-      <a href="#acasa" class="hover:text-[#41678f]" data-i18n="home">Acasă</a>
-      <a href="#despre" class="hover:text-[#41678f]" data-i18n="about">Despre</a>
-      <a href="#program" class="hover:text-[#41678f]" data-i18n="program">Program</a>
-      <a href="#predici" class="hover:text-[#41678f]" data-i18n="sermons">Predici</a>
-      <a href="#noutati" class="hover:text-[#41678f]" data-i18n="news">Noutăți</a>
-      <a href="#contact" class="hover:text-[#41678f]" data-i18n="contact">Contact</a>
+    <!-- Buton mobil -->
+    <div class="md:hidden">
+      <button id="menuToggle" class="text-2xl">&#9776;</button>
+    </div>
+
+    <!-- Meniu Desktop -->
+<nav class="hidden md:flex gap-6 items-center text-sm font-semibold text-gray-800">
+      <a href="#acasa" class="hover:text-[#41678f]">Acasă</a>
+      <a href="#despre" class="hover:text-[#41678f]">Despre</a>
+      <a href="#program" class="hover:text-[#41678f]">Program</a>
+      <a href="#predici" class="hover:text-[#41678f]">Predici</a>
+      <a href="#noutati" class="hover:text-[#41678f]">Noutăți</a>
+      <a href="#contact" class="hover:text-[#41678f]">Contact</a>
+      <div class="flex gap-1 pl-2 border-l border-gray-300 ml-2">
+        <button onclick="setLang('ro')">RO</button>
+        <button onclick="setLang('ru')">RU</button>
+        <button onclick="setLang('en')">EN</button>
+      </div>
     </nav>
+  </div>
 
-    <!-- Buton hamburger mobil -->
-    <button id="menu-btn" class="md:hidden text-3xl text-[#41678f] font-bold">&#9776;</button>
-
+  <!-- Meniu mobil -->
+<div id="mobileMenu" class="mobile-menu hidden bg-white text-center py-4 space-y-2">
+  <a href="#acasa" class="block menu-link" data-i18n="home">Acasă</a>
+  <a href="#despre" class="block menu-link" data-i18n="about">Despre</a>
+  <a href="#program" class="block menu-link" data-i18n="program">Program</a>
+  <a href="#predici" class="block menu-link" data-i18n="sermons">Predici</a>
+  <a href="#noutati" class="block menu-link" data-i18n="news">Noutăți</a>
+  <a href="#contact" class="block menu-link" data-i18n="contact">Contact</a>
+    <div class="flex justify-center gap-4 pt-2">
+      <button onclick="setLang('ro')">RO</button>
+      <button onclick="setLang('ru')">RU</button>
+      <button onclick="setLang('en')">EN</button>
+    </div>
   </div>
 </header>
 
-<!-- Meniu mobil overlay -->
-<div id="mobile-menu" class="fixed top-0 left-0 w-full h-full z-40 transform -translate-x-full flex flex-col justify-center items-center gap-8 text-2xl font-semibold transition-transform duration-300 md:hidden bg-white/90 backdrop-blur-md">
-  
-  <!-- Buton inchidere -->
-  <button id="close-btn" class="absolute top-6 right-6 text-[#41678f] text-3xl font-bold">&times;</button>
-  
-  <a href="#acasa" onclick="toggleMenu()">Acasă</a>
-  <a href="#despre" onclick="toggleMenu()">Despre</a>
-  <a href="#program" onclick="toggleMenu()">Program</a>
-  <a href="#predici" onclick="toggleMenu()">Predici</a>
-  <a href="#noutati" onclick="toggleMenu()">Noutăți</a>
-  <a href="#contact" onclick="toggleMenu()">Contact</a>
-
-  <div class="flex gap-4 mt-6">
-    <button onclick="setLang('ro'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">RO</button>
-    <button onclick="setLang('ru'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">RU</button>
-    <button onclick="setLang('en'); toggleMenu()" class="px-4 py-2 border rounded hover:bg-[#41678f] hover:text-white transition">EN</button>
-  </div>
-</div>
-
-
-
-<!-- Verset -->
-<section id="acasa" class="fullscreen relative w-full overflow-hidden flex items-center justify-center">  <img src="images/img1.jpg" alt="Imagine verset" class="absolute inset-0 w-full h-full object-cover" />
+<!-- SECTIUNE VERS -->
+<section id="acasa" class="relative w-full h-[90vh] overflow-hidden pt-24">
+  <img src="images/img1.jpg" alt="Imagine verset" class="absolute inset-0 w-full h-full object-cover" />
   <div class="absolute inset-0 bg-black/40"></div>
-  <div class="relative z-10 px-4 text-center animate-pulse">
-    <p class="text-white text-2xl md:text-4xl font-bold leading-snug" data-i18n="welcome_verse">
-      „Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viață veșnică.”
-    </p>
-    <p class="mt-4 text-lg md:text-xl text-white font-light" data-i18n="verse_ref">Ioan 3:16</p>
+  <div class="relative z-10 flex items-center justify-center h-full px-4 text-center" data-aos="fade-up" data-aos-duration="2000">
+    <div class="text-white max-w-3xl">
+      <p class="text-xl sm:text-3xl md:text-4xl font-bold leading-snug" data-i18n="welcome_verse">
+        „Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul Lui Fiu,
+        pentru ca oricine crede în El să nu piară, ci să aibă viață veșnică.”
+      </p>
+      <p class="mt-4 text-lg md:text-xl font-light" data-i18n="verse_ref">Ioan 3:16</p>
+    </div>
   </div>
 </section>
 
@@ -172,8 +182,24 @@
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init();</script>
-  <script>
-    const translations = {
+<script>
+  const toggleBtn = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  toggleBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+
+  // Închide meniul la click pe orice link din meniu
+  document.querySelectorAll('#mobileMenu .menu-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>
+<script>
+    function setLang(lang) {
+     const translations = {
   ro: {
     title: "Isus Cuvântul Vieții",
     home: "Acasă",
@@ -393,35 +419,7 @@ function setLang(lang) {
     }
   });
 }
+    }
   </script>
-  <script>
-  const menuBtn = document.getElementById('menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const closeBtn = document.getElementById('close-btn');
-
-  function toggleMenu() {
-    mobileMenu.classList.toggle('-translate-x-full');
-  }
-
-  menuBtn.addEventListener('click', toggleMenu);
-  closeBtn.addEventListener('click', toggleMenu);
-
-  // Forțează viewport-ul să fie full height pe mobil la load
-window.addEventListener('load', () => {
-  document.body.style.height = window.innerHeight + 'px';
-});
-
-window.addEventListener('resize', () => {
-  document.body.style.height = window.innerHeight + 'px';
-});
-function setVh() {
-  let vh = window.innerHeight * 0.01;
-  document.documentElement.style.setProperty('--vh', `${vh}px`);
-}
-
-window.addEventListener('load', setVh);
-window.addEventListener('resize', setVh);
-
-</script>
 </body>
 </html>
