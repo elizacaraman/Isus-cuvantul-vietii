@@ -145,3 +145,71 @@ footer {
   margin-top: 40px;
   font-size: 0.9rem;
 }
+
+/* --- Stiluri pentru floater-ul de limbi (partea dreaptă) --- */
+.lang-floater {
+  position: fixed;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.92);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  z-index: 60;
+  backdrop-filter: blur(4px);
+}
+
+/* butoane limbi */
+.lang-floater .lang-btn {
+  width: 46px;
+  height: 36px;
+  border-radius: 6px;
+  border: 1px solid #cfcfcf;
+  background: white;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+/* efect la hover/focus */
+.lang-floater .lang-btn:hover,
+.lang-floater .lang-btn:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  outline: none;
+}
+
+/* ascunde floater pe ecrane foarte mici (unde poate acoperi conținutul) */
+@media (max-width: 520px) {
+  .lang-floater {
+    display: none;
+  }
+}
+
+/* dacă dorești să afișezi floater și pe mobile, comentează media query-ul de mai sus */
+
+/* accesibilitate: focus vizibil */
+.lang-floater .lang-btn:focus {
+  box-shadow: 0 0 0 3px rgba(65,103,143,0.18);
+}
+
+/* mică adaptare pentru contrast pe mod întunecat (dacă folosești tema) */
+@media (prefers-color-scheme: dark) {
+  .lang-floater {
+    background: rgba(20,20,20,0.78);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .lang-floater .lang-btn {
+    background: rgba(255,255,255,0.06);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+}

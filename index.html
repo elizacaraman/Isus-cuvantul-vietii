@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+  <link rel="stylesheet" href="style.css"> <!-- stilul principal -->
   <style>
     body { font-family: 'Nunito', sans-serif; }
     html { scroll-behavior: smooth; }
@@ -40,11 +41,11 @@
       </ul>
     </nav>
 
-    <!-- Limbi -->
-    <div class="flex gap-2 text-sm font-semibold text-[#1f2937] mt-2 md:mt-0">
-      <button onclick="setLang('ro')">RO</button>
-      <button onclick="setLang('ru')">RU</button>
-      <button onclick="setLang('en')">EN</button>
+    <!-- Limbi (în header, păstrat ca fallback pentru ecrane mici) -->
+    <div class="hidden md:flex gap-2 text-sm font-semibold text-[#1f2937] mt-2 md:mt-0" aria-hidden="true">
+      <button onclick="setLang('ro')" aria-label="Română">RO</button>
+      <button onclick="setLang('ru')" aria-label="Русский">RU</button>
+      <button onclick="setLang('en')" aria-label="English">EN</button>
     </div>
   </div>
 </header>
@@ -153,6 +154,13 @@
 </p>
 </footer>
 
+<!-- Selector de limbi fixat în partea dreaptă (vertical) -->
+<div id="lang-floater" class="lang-floater" aria-label="Selectează limba">
+  <button onclick="setLang('ro')" aria-label="Română" class="lang-btn">RO</button>
+  <button onclick="setLang('ru')" aria-label="Русский" class="lang-btn">RU</button>
+  <button onclick="setLang('en')" aria-label="English" class="lang-btn">EN</button>
+</div>
+
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init();</script>
   <script>
@@ -170,7 +178,7 @@
     verse_ref: "Ioan 3:16",
     welcome: "Bine ați venit pe pagina oficială a Bisericii Penticostale „Isus Cuvântul Vieții” din satul Lozova...",
     about_heading: "Despre Biserică",
-    about_text1: "Biserica „Isus Cuvântul Vieții” din Lozova a fost înființată cu dorința sinceră de a răspândi lumina Evangheliei.",
+    about_text1: "Biserica „Isus Cuvântul Vieții” din Lozova a fost înființată cu dorința sinceră de a răspândi Evanghelia.",
     about_text2: "Viziunea noastră este ca fiecare om să audă și să trăiască Cuvântul lui Dumnezeu.",
     about_text: "Biserica 'Isus Cuvântul Vieții' din Lozova a fost fondată cu dorința sinceră de a transmite Evanghelia fiecărui suflet. Sub conducerea pastorului Spiridon Cozaru, comunitatea crește în credință, dragoste și unitate. Viziunea noastră este să fim o lumină în satul nostru și dincolo de el.",
     program_heading: "Programul slujbelor",
@@ -189,8 +197,6 @@
     message: "Mesaj:",
     submit: "Trimite",
     follow_us: "Urmărește-ne pe",
-    welcome_verse: "„Fiindcă atât de mult a iubit Dumnezeu lumea, că a dat pe singurul Lui Fiu, pentru ca oricine crede în El să nu piară, ci să aibă viață veșnică.”",
-    verse_ref: "Ioan 3:16",
     post_date_1: "Post și rugăciune – 15 iunie",
     post_descr_1: "Vino alături de noi într-o zi specială de post și rugăciune pentru satul Lozova.",
     post_date_2: "Tabără pentru tineri – iulie 2025",
@@ -202,12 +208,6 @@
     phone: "Telefon: +373 60 123 456",
     copyright: "© 2025 Isus Cuvântul Vieții, Lozova",
     cta: "Vino la o slujbă",
-    post_date_1: "Post și rugăciune – 15 iunie",
-    post_descr_1: "Vino alături de noi într-o zi specială de post și rugăciune pentru satul Lozova.",
-    post_date_2: "Tabără pentru tineri – iulie 2025",
-    post_descr_2: "Înscrie-te la tabăra de vară cu activități, laudă și închinare.",
-    post_date_3: "Concert de închinare – 30 august",
-    post_descr_3: "Eveniment deschis pentru toți – o seară de muzică și mărturii.",
     contact_label: "Date de contact",
     address_label: "Adresă:",
     phone_label: "Telefon:",
@@ -253,8 +253,6 @@
     message: "Сообщение:",
     submit: "Отправить",
     follow_us: "Следите за нами в",
-    welcome_verse: "«Ибо так возлюбил Бог мир, что отдал Сына Своего Единородного, дабы всякий верующий в Него не погиб, но имел жизнь вечную.»",
-    verse_ref: "Иоанна 3:16",
     post_date_1: "Пост и молитва – 15 июня",
     post_descr_1: "Присоединяйтесь к нам в особый день поста и молитвы за село Лозова.",
     post_date_2: "Лагерь для молодежи – июль 2025",
@@ -266,13 +264,6 @@
     phone: "Телефон: +373 60 123 456",
     copyright: "© 2025 Иисус — Слово Жизни, Лозова",
     cta: "Посетите служение",
-    post_date_1: "Пост и молитва – 15 июня",
-    post_descr_1: "Присоединяйтесь к нам в особый день поста и молитвы за село Лозова.",
-    post_date_2: "Молодежный лагерь – июль 2025",
-    post_descr_2: "Запишитесь в летний лагерь с поклонением и активностями.",
-    post_date_3: "Концерт поклонения – 30 августа",
-    post_descr_3: "Открытое мероприятие для всех – вечер музыки и свидетельств.",
-    contact_label: "Контактные данные",
     address_label: "Адрес:",
     phone_label: "Телефон:",
     email_label: "Эл. почта:",
@@ -317,8 +308,6 @@
     message: "Message:",
     submit: "Send",
     follow_us: "Follow us on",
-    welcome_verse: "“For God so loved the world that He gave His one and only Son, that whoever believes in Him shall not perish but have eternal life.”",
-    verse_ref: "John 3:16",
     post_date_1: "Fasting and Prayer – June 15",
     post_descr_1: "Join us for a special day of fasting and prayer for the village of Lozova.",
     post_date_2: "Youth Camp – July 2025",
@@ -330,13 +319,6 @@
     phone: "Phone: +373 60 123 456",
     copyright: "© 2025 Jesus the Word of Life, Lozova",
     cta: "Join a service",
-    post_date_1: "Fasting and Prayer – June 15",
-    post_descr_1: "Join us for a special day of fasting and prayer for the village of Lozova.",
-    post_date_2: "Youth Camp – July 2025",
-    post_descr_2: "Register for the summer camp with worship and activities.",
-    post_date_3: "Worship Concert – August 30",
-    post_descr_3: "Open event for everyone – a night of music and testimonies.",
-    contact_label: "Contact Information",
     address_label: "Address:",
     phone_label: "Phone:",
     email_label: "Email:",
@@ -355,7 +337,7 @@ function setLang(lang) {
   // Pentru text simplu
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.textContent = translations[lang][key];
     }
   });
@@ -363,7 +345,7 @@ function setLang(lang) {
   // Pentru HTML (ex: cu <span>)
   document.querySelectorAll("[data-i18n-html]").forEach(el => {
     const key = el.getAttribute("data-i18n-html");
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.innerHTML = translations[lang][key];
     }
   });
@@ -371,10 +353,15 @@ function setLang(lang) {
   // Pentru placeholder
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => {
     const key = el.getAttribute("data-i18n-placeholder");
-    if (translations[lang][key]) {
+    if (translations[lang] && translations[lang][key]) {
       el.setAttribute("placeholder", translations[lang][key]);
     }
   });
+
+  // Actualizează titlul paginii
+  if (translations[lang] && translations[lang].title) {
+    document.title = translations[lang].title;
+  }
 }
   </script>
 </body>
